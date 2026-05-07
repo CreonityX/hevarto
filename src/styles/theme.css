@@ -79,7 +79,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Google Sans', sans-serif;
+  --font-sans: "Google Sans", sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
