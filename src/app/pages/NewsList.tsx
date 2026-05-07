@@ -48,7 +48,7 @@ export function NewsList() {
   return (
     <div className="flex flex-col min-h-screen bg-transparent">
       {/* Header */}
-      <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
+      <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
         <div className="flex items-center gap-6">
           <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
             News
