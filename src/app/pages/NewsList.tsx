@@ -1,15 +1,50 @@
 import { Link } from "react-router";
 import { ArrowLeft } from "lucide-react";
 import { Footer } from "../components/Footer";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../../lib/firebase";
 
-const mockArticles = [
-  { id: 1, date: "May 07, 2026", title: "Announcing the revamp of Hevarto, switch to Parent Org" },
-  { id: 2, date: "May 07, 2026", title: "Announcing the revamp of Hevarto, switch to Parent Org" },
-  { id: 3, date: "May 07, 2026", title: "Announcing the revamp of Hevarto, switch to Parent Org" },
-  { id: 4, date: "May 07, 2026", title: "Announcing the revamp of Hevarto, switch to Parent Org" },
-];
+interface ArticleMeta {
+  id: string;
+  date: string;
+  title: string;
+}
 
 export function NewsList() {
+  const [articles, setArticles] = useState<ArticleMeta[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchArticles() {
+      try {
+        const q = query(collection(db, "news"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(q);
+        const fetchedArticles = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          title: doc.data().title,
+          date: doc.data().date
+        }));
+        setArticles(fetchedArticles);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    // Only fetch if Firebase is likely configured (basic check)
+    if (db.app.options.apiKey !== "AIzaSy_YOUR_API_KEY") {
+      fetchArticles();
+    } else {
+      setLoading(false);
+      // Fallback mock data if Firebase isn't set up yet
+      setArticles([
+        { id: "1", date: "May 07, 2026", title: "Configure Firebase to see real articles" },
+      ]);
+    }
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-transparent">
       {/* Header */}
@@ -29,20 +64,26 @@ export function NewsList() {
 
       {/* News List */}
       <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[40px] pb-[100px]">
-        {mockArticles.map((article) => (
-          <Link 
-            key={article.id} 
-            to={`/news/${article.id}`}
-            className="flex flex-col gap-2 group cursor-pointer"
-          >
-            <span className="text-black dark:text-white transition-colors text-[20px] md:text-[30px] font-normal font-sans">
-              {article.date}
-            </span>
-            <h2 className="text-[#ed1f27] text-[20px] md:text-[30px] font-normal font-sans group-hover:underline">
-              {article.title}
-            </h2>
-          </Link>
-        ))}
+        {loading ? (
+          <p className="text-[#8e8e8e] text-2xl font-normal">Loading news...</p>
+        ) : articles.length === 0 ? (
+          <p className="text-[#8e8e8e] text-2xl font-normal">No news articles found.</p>
+        ) : (
+          articles.map((article) => (
+            <Link 
+              key={article.id} 
+              to={`/news/${article.id}`}
+              className="flex flex-col gap-2 group cursor-pointer"
+            >
+              <span className="text-black dark:text-white transition-colors text-[20px] md:text-[30px] font-normal">
+                {article.date}
+              </span>
+              <h2 className="text-[#ed1f27] text-[20px] md:text-[30px] font-normal group-hover:underline">
+                {article.title}
+              </h2>
+            </Link>
+          ))
+        )}
       </main>
 
       <Footer />
