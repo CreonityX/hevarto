@@ -30,12 +30,12 @@ export function Footer() {
     <>
       {/* Footer Nav */}
       <footer className="flex flex-row items-center justify-between md:justify-start px-[48px] md:px-[86px] pb-[43px] gap-8 md:gap-32 mt-auto relative z-[60]">
-        <Link to="/" className="text-[#ed1f27] text-[40px] md:text-[50px] font-medium font-['Google_Sans_Flex',sans-serif] hover:opacity-80 transition-opacity z-[60]">
+        <Link to="/" className="text-[#ed1f27] text-[40px] md:text-[50px] font-medium font-sans hover:opacity-80 transition-opacity z-[60]">
           Hevarto
         </Link>
         
         {/* Desktop Nav - Centered with logo baseline */}
-        <nav className="hidden md:flex flex-wrap items-center gap-8 md:gap-16 text-[#8e8e8e] text-[18px] md:text-[25px] font-normal font-['Google_Sans_Flex',sans-serif]">
+        <nav className="hidden md:flex flex-wrap items-center gap-8 md:gap-16 text-[#8e8e8e] text-[18px] md:text-[25px] font-normal font-sans">
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">About</Link>
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">Investors</Link>
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
@@ -83,7 +83,7 @@ export function Footer() {
                 {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
               </button>
             </div>
-            <nav className="flex flex-col items-start gap-10 text-[#8e8e8e] text-[25px] font-normal font-['Google_Sans_Flex',sans-serif]">
+            <nav className="flex flex-col items-start gap-10 text-[#8e8e8e] text-[25px] font-normal font-sans">
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">About</Link>
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Investors</Link>
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Privacy</Link>

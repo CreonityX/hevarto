@@ -15,10 +15,10 @@ export function NewsList() {
       {/* Header */}
       <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
         <div className="flex items-center gap-6">
-          <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] font-normal font-['Google_Sans_Flex',sans-serif]">
+          <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] font-normal font-sans">
             News
           </h1>
-          <span className="text-[#ed1f27] text-[40px] md:text-[50px] font-normal font-['Google_Sans_Flex',sans-serif]">
+          <span className="text-[#ed1f27] text-[40px] md:text-[50px] font-normal font-sans">
             05/26
           </span>
         </div>
@@ -35,10 +35,10 @@ export function NewsList() {
             to={`/news/${article.id}`}
             className="flex flex-col gap-2 group cursor-pointer"
           >
-            <span className="text-black dark:text-white transition-colors text-[20px] md:text-[30px] font-normal font-['Google_Sans_Flex',sans-serif]">
+            <span className="text-black dark:text-white transition-colors text-[20px] md:text-[30px] font-normal font-sans">
               {article.date}
             </span>
-            <h2 className="text-[#ed1f27] text-[20px] md:text-[30px] font-normal font-['Google_Sans_Flex',sans-serif] group-hover:underline">
+            <h2 className="text-[#ed1f27] text-[20px] md:text-[30px] font-normal font-sans group-hover:underline">
               {article.title}
             </h2>
           </Link>
