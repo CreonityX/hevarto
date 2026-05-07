@@ -53,10 +53,10 @@ export function Article() {
     <div className="flex flex-col min-h-screen bg-transparent">
       {/* Header */}
       <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
-        <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] font-normal font-sans">
+        <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
           News
         </h1>
-        <Link to="/news" className="text-[#8e8e8e] hover:opacity-80 transition-opacity p-2">
+        <Link to="/news" className="text-[#8e8e8e] hover:opacity-80 transition-opacity flex items-center">
           <ArrowLeft strokeWidth={1} size={48} />
         </Link>
       </header>

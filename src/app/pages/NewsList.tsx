@@ -50,14 +50,14 @@ export function NewsList() {
       {/* Header */}
       <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
         <div className="flex items-center gap-6">
-          <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] font-normal font-sans">
+          <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
             News
           </h1>
-          <span className="text-[#ed1f27] text-[40px] md:text-[50px] font-normal font-sans">
+          <span className="text-[#ed1f27] text-[40px] md:text-[50px] leading-none font-normal font-sans">
             05/26
           </span>
         </div>
-        <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity p-2">
+        <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity flex items-center">
           <ArrowLeft strokeWidth={1} size={48} />
         </Link>
       </header>
