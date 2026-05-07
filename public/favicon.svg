@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
   </style>
   <rect width="32" height="32" fill="#D0021B"/>
   <text
