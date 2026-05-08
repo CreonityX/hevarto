@@ -12,6 +12,7 @@ interface ArticleData {
   date: string;
   content: string;
   contacts?: { name: string; email: string }[];
+  author?: { name: string; position: string };
 }
 
 export function Article() {
@@ -76,7 +77,16 @@ export function Article() {
               {article.title}
             </h1>
             
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed font-sans">
+            {article.author?.name && (
+              <div className="flex flex-col mt-4 mb-2">
+                <span className="text-black dark:text-white text-lg font-medium">By {article.author.name}</span>
+                {article.author.position && (
+                  <span className="text-[#8e8e8e] text-md">{article.author.position}</span>
+                )}
+              </div>
+            )}
+
+            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed font-sans mt-6">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {article.content}
               </ReactMarkdown>

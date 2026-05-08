@@ -24,6 +24,7 @@ interface ArticleMeta {
   date: string;
   content: string;
   contacts: Contact[];
+  author?: { name: string; position: string };
 }
 
 const ALLOWED_EMAILS = [
@@ -56,6 +57,8 @@ export function Admin() {
       year: "numeric",
     })
   );
+  const [authorName, setAuthorName] = useState("");
+  const [authorPosition, setAuthorPosition] = useState("");
   const [content, setContent] = useState("");
   const [contacts, setContacts] = useState<Contact[]>([{ name: "", email: "" }]);
   const [isPreview, setIsPreview] = useState(false);
@@ -84,6 +87,7 @@ export function Admin() {
         date: doc.data().date,
         content: doc.data().content,
         contacts: doc.data().contacts || [],
+        author: doc.data().author,
       }));
       setArticles(fetchedArticles);
     } catch (error) {
@@ -149,6 +153,8 @@ export function Admin() {
         year: "numeric",
       })
     );
+    setAuthorName("");
+    setAuthorPosition("");
     setContent("");
     setContacts([{ name: "", email: "" }]);
     setSaveMessage("");
@@ -164,6 +170,8 @@ export function Admin() {
     setEditingId(article.id);
     setTitle(article.title);
     setDate(article.date);
+    setAuthorName(article.author?.name || "");
+    setAuthorPosition(article.author?.position || "");
     setContent(article.content);
     setContacts(article.contacts.length > 0 ? article.contacts : [{ name: "", email: "" }]);
     setSaveMessage("");
@@ -191,9 +199,9 @@ export function Admin() {
       const data = {
         title,
         date,
+        author: { name: authorName, position: authorPosition },
         content,
         contacts: contacts.filter((c) => c.name || c.email),
-        author: user?.email,
       };
 
       if (editingId) {
@@ -405,6 +413,30 @@ export function Admin() {
               />
             </div>
 
+            {/* Author */}
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+              <div className="flex flex-col gap-2 flex-1">
+                <label className="text-[#8e8e8e] text-lg">Author Name</label>
+                <input
+                  type="text"
+                  value={authorName}
+                  onChange={(e) => setAuthorName(e.target.value)}
+                  placeholder="e.g. John Doe"
+                  className="w-full bg-transparent border-b border-[#8e8e8e] text-black dark:text-white text-xl pb-2 focus:outline-none focus:border-[#ed1f27] transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-2 flex-1">
+                <label className="text-[#8e8e8e] text-lg">Author Position</label>
+                <input
+                  type="text"
+                  value={authorPosition}
+                  onChange={(e) => setAuthorPosition(e.target.value)}
+                  placeholder="e.g. Senior Editor"
+                  className="w-full bg-transparent border-b border-[#8e8e8e] text-black dark:text-white text-xl pb-2 focus:outline-none focus:border-[#ed1f27] transition-colors"
+                />
+              </div>
+            </div>
+
             {/* Markdown Editor */}
             <div className="flex flex-col gap-2">
               <label className="text-[#8e8e8e] text-lg">Content (Markdown supported)</label>
@@ -496,7 +528,14 @@ export function Admin() {
               {title || "Article Title Placeholder"}
             </h1>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed">
+            {(authorName || authorPosition) && (
+              <div className="flex flex-col mt-4 mb-2">
+                {authorName && <span className="text-black dark:text-white text-lg font-medium">By {authorName}</span>}
+                {authorPosition && <span className="text-[#8e8e8e] text-md">{authorPosition}</span>}
+              </div>
+            )}
+
+            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed mt-6">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {content || "*Article content will appear here...*"}
               </ReactMarkdown>
