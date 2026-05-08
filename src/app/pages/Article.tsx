@@ -57,9 +57,6 @@ export function Article() {
         <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
           News
         </h1>
-        <Link to="/news" className="text-[#8e8e8e] hover:opacity-80 transition-opacity flex items-center">
-          <ArrowLeft strokeWidth={1} size={48} />
-        </Link>
       </header>
 
       {/* Article Content */}

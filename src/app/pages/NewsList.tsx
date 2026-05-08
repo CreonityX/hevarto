@@ -57,9 +57,6 @@ export function NewsList() {
             05/26
           </span>
         </div>
-        <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity flex items-center">
-          <ArrowLeft strokeWidth={1} size={48} />
-        </Link>
       </header>
 
       {/* News List */}

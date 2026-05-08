@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { NewsList } from "./pages/NewsList";
 import { Article } from "./pages/Article";
 import { Admin } from "./pages/Admin";
+import { Investors } from "./pages/Investors";
 
 const isAdminSubdomain = window.location.hostname === "admin.hevarto.com";
 
@@ -29,6 +30,7 @@ const getRoutes = () => {
         { index: true, Component: Home },
         { path: "news", Component: NewsList },
         { path: "news/:id", Component: Article },
+        { path: "investors", Component: Investors },
         { path: "admin", Component: Admin }, // Kept for local development testing
       ],
     },

@@ -242,9 +242,6 @@ export function Admin() {
     return (
       <div className="flex flex-col min-h-[100dvh] bg-transparent items-center justify-center px-[48px]">
         <div className="w-full max-w-md flex flex-col gap-8">
-          <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity mb-4 inline-flex items-center gap-2">
-            <ArrowLeft strokeWidth={1} size={24} /> Back to site
-          </Link>
           <h1 className="text-[#8e8e8e] text-[40px] font-normal">
             Admin <span className="text-[#ed1f27]">Portal</span>
           </h1>
@@ -317,9 +314,6 @@ export function Admin() {
           <button onClick={handleLogout} className="text-[#8e8e8e] hover:text-[#ed1f27] transition-colors p-2" title="Log Out">
             <LogOut strokeWidth={1} size={32} />
           </button>
-          <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity p-2 hidden md:block" title="Back to Site">
-            <ArrowLeft strokeWidth={1} size={48} />
-          </Link>
         </div>
       </header>
 
@@ -377,7 +371,7 @@ export function Admin() {
                 onClick={() => setView("dashboard")}
                 className="text-[#8e8e8e] hover:text-black dark:hover:text-white flex items-center gap-2 transition-colors"
               >
-                <ArrowLeft size={20} /> Back to Dashboard
+                Back to Dashboard
               </button>
               
               {/* Mobile preview toggle */}
