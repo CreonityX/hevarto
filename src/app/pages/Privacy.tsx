@@ -6,12 +6,12 @@ export function Privacy() {
       {/* Header */}
       <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
         <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
-          Privacy <span className="text-[#ed1f27]">Policy</span>
+          Privacy Policy
         </h1>
       </header>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] max-w-[1000px]">
+      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] w-full">
         <div className="prose prose-lg dark:prose-invert max-w-none text-black dark:text-white text-[16px] md:text-[20px] font-normal font-sans leading-relaxed">
           <p className="text-sm text-[#8e8e8e]"><strong>Effective Date: May 8, 2026</strong></p>
           
@@ -56,7 +56,7 @@ export function Privacy() {
           <p>It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page.</p>
 
           <h2 className="text-2xl font-medium mt-8 mb-4">8. Contact Information</h2>
-          <p>To ask questions or comment about this privacy policy and our privacy practices, please contact us at <a href="mailto:Connect@hevarto.com" className="text-[#ed1f27] hover:underline">Connect@hevarto.com</a>.</p>
+          <p>To ask questions or comment about this privacy policy and our privacy practices, please contact us at <a href="mailto:connect@hevarto.com" className="text-[#ed1f27] hover:underline">connect@hevarto.com</a>.</p>
         </div>
       </main>
 

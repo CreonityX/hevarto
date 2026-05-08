@@ -6,12 +6,12 @@ export function Terms() {
       {/* Header */}
       <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
         <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
-          Terms of <span className="text-[#ed1f27]">Service</span>
+          Terms of Service
         </h1>
       </header>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] max-w-[1000px]">
+      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] w-full">
         <div className="prose prose-lg dark:prose-invert max-w-none text-black dark:text-white text-[16px] md:text-[20px] font-normal font-sans leading-relaxed">
           <p className="text-sm text-[#8e8e8e]"><strong>Effective Date: May 8, 2026</strong></p>
           
@@ -50,7 +50,7 @@ export function Terms() {
           <p>We may revise and update these Terms of Service from time to time in our sole discretion. All changes are effective immediately when we post them. Your continued use of the Website following the posting of revised Terms of Service means that you accept and agree to the changes.</p>
 
           <h2 className="text-2xl font-medium mt-8 mb-4">10. Contact Information</h2>
-          <p>All feedback, comments, requests for technical support, and other communications relating to the Website should be directed to: <a href="mailto:Connect@hevarto.com" className="text-[#ed1f27] hover:underline">Connect@hevarto.com</a>.</p>
+          <p>All feedback, comments, requests for technical support, and other communications relating to the Website should be directed to: <a href="mailto:connect@hevarto.com" className="text-[#ed1f27] hover:underline">connect@hevarto.com</a>.</p>
         </div>
       </main>
 
