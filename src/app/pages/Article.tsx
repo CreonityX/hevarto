@@ -50,7 +50,7 @@ export function Article() {
     }
   }, [id]);
   return (
-    <div className="flex flex-col min-h-screen bg-transparent">
+    <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
       <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
         <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">

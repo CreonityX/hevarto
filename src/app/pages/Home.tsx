@@ -3,7 +3,7 @@ import { Footer } from "../components/Footer";
 
 export function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-transparent">
+    <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
       <header className="flex justify-end pt-[43px] px-[48px] md:px-[86px]">
         <Link 

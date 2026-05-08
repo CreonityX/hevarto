@@ -227,12 +227,12 @@ export function Admin() {
   };
 
   if (authLoading) {
-    return <div className="flex min-h-screen items-center justify-center bg-transparent"><p className="text-[#8e8e8e] text-2xl">Checking authentication...</p></div>;
+    return <div className="flex min-h-[100dvh] items-center justify-center bg-transparent"><p className="text-[#8e8e8e] text-2xl">Checking authentication...</p></div>;
   }
 
   if (!user || !ALLOWED_EMAILS.includes(user.email || "")) {
     return (
-      <div className="flex flex-col min-h-screen bg-transparent items-center justify-center px-[48px]">
+      <div className="flex flex-col min-h-[100dvh] bg-transparent items-center justify-center px-[48px]">
         <div className="w-full max-w-md flex flex-col gap-8">
           <Link to="/" className="text-[#8e8e8e] hover:opacity-80 transition-opacity mb-4 inline-flex items-center gap-2">
             <ArrowLeft strokeWidth={1} size={24} /> Back to site
@@ -289,7 +289,7 @@ export function Admin() {
 
   // Authenticated Admin View
   return (
-    <div className="flex flex-col min-h-screen bg-transparent pb-[100px]">
+    <div className="flex flex-col min-h-[100dvh] bg-transparent pb-[100px]">
       <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
         <div className="flex flex-col">
           <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] font-normal">

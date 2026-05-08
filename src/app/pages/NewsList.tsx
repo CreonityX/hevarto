@@ -46,7 +46,7 @@ export function NewsList() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-transparent">
+    <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
       <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
         <div className="flex items-center gap-6">
