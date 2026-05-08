@@ -10,17 +10,14 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
-    // Check local storage or system preference on mount
-    const storedTheme = localStorage.getItem("hevarto-theme") as Theme | null;
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("hevarto-theme") as Theme | null;
+      if (storedTheme) return storedTheme;
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
     }
-  }, []);
+    return "light";
+  });
 
   useEffect(() => {
     // Apply theme to document root for Tailwind dark mode

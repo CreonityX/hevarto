@@ -40,6 +40,7 @@ export function Footer() {
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">Investors</Link>
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">Terms</Link>
+          <Link to="/contact" className="hover:text-black dark:hover:text-white transition-colors">Contact</Link>
           
           <button 
             onClick={toggleTheme} 
@@ -88,6 +89,7 @@ export function Footer() {
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Investors</Link>
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Terms</Link>
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Contact</Link>
             </nav>
           </motion.div>
         )}
