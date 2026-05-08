@@ -38,8 +38,8 @@ export function Footer() {
         <nav className="hidden md:flex flex-wrap items-center gap-8 md:gap-16 text-[#8e8e8e] text-[18px] md:text-[25px] font-normal font-sans">
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">About</Link>
           <Link to="/investors" className={`transition-colors ${location.pathname === '/investors' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Investors</Link>
-          <Link to="/privacy" className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link>
-          <Link to="/terms" className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link>
+          {/* <Link to="/privacy" className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link> */}
+          {/* <Link to="/terms" className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link> */}
           <a href="mailto:Connect@hevarto.com" className="hover:text-black dark:hover:text-white transition-colors">Contact</a>
           
           <button 
@@ -87,8 +87,8 @@ export function Footer() {
             <nav className="flex flex-col items-start gap-10 text-[#8e8e8e] text-[25px] font-normal font-sans">
               <Link to="#" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">About</Link>
               <Link to="/investors" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/investors' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Investors</Link>
-              <Link to="/privacy" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link>
-              <Link to="/terms" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link>
+              {/* <Link to="/privacy" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link> */}
+              {/* <Link to="/terms" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link> */}
               <a href="mailto:Connect@hevarto.com" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Contact</a>
             </nav>
           </motion.div>
