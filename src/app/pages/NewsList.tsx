@@ -45,6 +45,14 @@ export function NewsList() {
     }
   }, []);
 
+  let latestMonthYear = "05/26";
+  if (articles.length > 0 && articles[0].date) {
+    const d = new Date(articles[0].date);
+    if (!isNaN(d.getTime())) {
+      latestMonthYear = `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getFullYear()).slice(-2)}`;
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
@@ -54,7 +62,7 @@ export function NewsList() {
             News
           </h1>
           <span className="text-[#ed1f27] text-[40px] md:text-[50px] leading-none font-normal font-sans">
-            05/26
+            {latestMonthYear}
           </span>
         </div>
       </header>
