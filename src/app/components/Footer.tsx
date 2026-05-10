@@ -33,17 +33,17 @@ export function Footer() {
         <Link to="/" className="text-[#ed1f27] text-[40px] md:text-[50px] font-medium font-sans hover:opacity-80 transition-opacity z-[60]">
           Hevarto
         </Link>
-        
+
         {/* Desktop Nav - Centered with logo baseline */}
         <nav className="hidden md:flex flex-wrap items-center gap-8 md:gap-16 text-[#8e8e8e] text-[18px] md:text-[25px] font-normal font-sans">
           <Link to="#" className="hover:text-black dark:hover:text-white transition-colors">About</Link>
           <Link to="/investors" className={`transition-colors ${location.pathname === '/investors' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Investors</Link>
           {/* <Link to="/privacy" className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link> */}
           {/* <Link to="/terms" className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link> */}
-          <a href="mailto:Connect@hevarto.com" className="hover:text-black dark:hover:text-white transition-colors">Contact</a>
-          
-          <button 
-            onClick={toggleTheme} 
+          <Link to="/contact" className={`transition-colors ${location.pathname === '/contact' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Contact</Link>
+
+          <button
+            onClick={toggleTheme}
             className="hover:text-black dark:hover:text-white transition-colors ml-4 md:ml-0"
             aria-label="Toggle dark mode"
           >
@@ -53,7 +53,7 @@ export function Footer() {
 
         {/* Mobile Hamburger Button */}
         <div className="md:hidden flex items-center z-[60]">
-          <button 
+          <button
             className="relative w-8 h-[20px] text-[#8e8e8e] hover:text-black dark:hover:text-white transition-colors focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle mobile menu"
@@ -68,7 +68,7 @@ export function Footer() {
       {/* Mobile Full Screen Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: "10%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "10%" }}
@@ -76,8 +76,8 @@ export function Footer() {
             className="fixed inset-0 bg-white dark:bg-black z-[55] flex flex-col justify-center px-[48px] md:hidden"
           >
             <div className="absolute top-[43px] left-[48px]">
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className="text-[#8e8e8e] hover:text-black dark:hover:text-white transition-colors focus:outline-none"
                 aria-label="Toggle dark mode"
               >
@@ -89,7 +89,7 @@ export function Footer() {
               <Link to="/investors" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/investors' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Investors</Link>
               {/* <Link to="/privacy" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/privacy' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Privacy</Link> */}
               {/* <Link to="/terms" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/terms' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Terms</Link> */}
-              <a href="mailto:Connect@hevarto.com" onClick={() => setIsOpen(false)} className="hover:text-black dark:hover:text-white transition-colors">Contact</a>
+              <Link to="/contact" onClick={() => setIsOpen(false)} className={`transition-colors ${location.pathname === '/contact' ? 'text-black dark:text-white' : 'hover:text-black dark:hover:text-white'}`}>Contact</Link>
             </nav>
           </motion.div>
         )}

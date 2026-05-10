@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Footer } from "../components/Footer";
 
 export function Investors() {
@@ -15,12 +16,12 @@ export function Investors() {
         <p className="text-[20px] md:text-[30px] text-[#8e8e8e] dark:text-white font-normal font-sans leading-tight whitespace-pre-wrap">
           We are building brands for the creators of tomorrow and looking for investors aligned with our vision.
         </p>
-        <a 
-          href="mailto:Connect@hevarto.com" 
+        <Link 
+          to="/contact" 
           className="text-[#ed1f27] text-[18px] md:text-[25px] font-normal font-sans hover:opacity-80 transition-opacity w-fit mt-2"
         >
           Contact
-        </a>
+        </Link>
       </main>
 
       <Footer />
