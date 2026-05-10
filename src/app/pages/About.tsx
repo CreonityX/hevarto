@@ -11,8 +11,8 @@ export function About() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] max-w-[1400px]">
-        <div className="w-full flex flex-col gap-6 text-[#8e8e8e] dark:text-[#a0a0a0] text-[20px] md:text-[24px] font-normal font-sans leading-[1.6]">
+      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[24px] md:mt-[32px] gap-[16px] pb-[40px] max-w-[1400px]">
+        <div className="w-full flex flex-col gap-3 text-[#8e8e8e] dark:text-[#a0a0a0] text-[15px] md:text-[17px] font-normal font-sans leading-[1.55]">
           <p>
             Hevarto started as a technology company. We built products for other people — helped them move faster, think through hard problems, get things off the ground. It was good work, and it put us close to a lot of different industries, a lot of different users, and a lot of problems worth solving.
           </p>
@@ -20,7 +20,7 @@ export function About() {
             That closeness is what changed things. We kept seeing the same thing: a real problem, sitting right there, with no product built around it yet. Not a gap someone was about to fill. Just an open space. And we had the skills, the context, and the conviction to step into it.
           </p>
           <p>
-            So in 2025, we restructured. Hevarto became the foundation — the place where new companies are built from scratch, given room to grow, and eventually operate entirely on their own. Each one under its own name, with its own team and its own direction. What ties them together is where they started.
+            So in May 2026, we restructured. Hevarto became the foundation — the place where new companies are built from scratch, given room to grow, and eventually operate entirely on their own. Each one under its own name, with its own team and its own direction. What ties them together is where they started.
           </p>
           <p>
             We are not a fund. We do not back other people's ideas. We build our own, and we hold them for the long term. That is the whole model.
@@ -32,11 +32,11 @@ export function About() {
             But we are working.
           </p>
 
-          <div className="flex flex-col gap-2 mt-12">
-            <img 
-              src="/meet-sign.png" 
-              alt="Meet Ahuja Signature" 
-              className="h-[80px] w-auto object-contain self-start dark:invert opacity-90 mix-blend-multiply dark:mix-blend-normal" 
+          <div className="flex flex-col gap-2 mt-4">
+            <img
+              src="/meet-sign.png"
+              alt="Meet Ahuja Signature"
+              className="h-[56px] w-auto object-contain self-start dark:invert opacity-90 mix-blend-multiply dark:mix-blend-normal"
             />
             <div className="flex flex-col text-lg text-black dark:text-white mt-2">
               <span className="font-medium">Meet Ahuja</span>
