@@ -60,8 +60,8 @@ export function Article() {
       </header>
 
       {/* Article Content */}
-      <main className="flex-1 flex flex-col items-center px-[48px] md:px-[86px] mt-[24px] md:mt-[32px] gap-[24px] pb-[100px] w-full max-w-[1400px] mx-auto">
-        <div className="w-full max-w-[800px] flex flex-col gap-[24px]">
+      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[24px] md:mt-[32px] gap-[24px] pb-[100px] max-w-[1400px]">
+        <div className="w-full flex flex-col gap-[24px]">
           {loading ? (
             <p className="text-[#8e8e8e] text-xl font-normal">Loading article...</p>
           ) : !article ? (
