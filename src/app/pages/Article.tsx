@@ -53,59 +53,68 @@ export function Article() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
-      <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
-        <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
+      <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
+        <h1 className="text-[#8e8e8e] text-[20px] md:text-[24px] font-medium font-sans flex items-center gap-2 uppercase tracking-wide">
           News
         </h1>
       </header>
 
       {/* Article Content */}
-      <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] max-w-[1400px]">
-        {loading ? (
-          <p className="text-[#8e8e8e] text-2xl font-normal">Loading article...</p>
-        ) : !article ? (
-          <p className="text-[#8e8e8e] text-2xl font-normal">Article not found.</p>
-        ) : (
-          <>
-            <div className="flex justify-between items-end pb-4">
-              <span className="text-[#8e8e8e] text-xl font-normal">{article.date}</span>
-            </div>
-            <h1 className="text-[32px] md:text-[50px] leading-tight text-black dark:text-white transition-colors font-normal font-sans">
-              {article.title}
-            </h1>
-            
-            {article.author?.name && (
-              <div className="flex flex-col mt-4 mb-2">
-                <span className="text-black dark:text-white text-lg font-medium">By {article.author.name}</span>
-                {article.author.position && (
-                  <span className="text-[#8e8e8e] text-md">{article.author.position}</span>
-                )}
-              </div>
-            )}
+      <main className="flex-1 flex flex-col items-center px-[24px] md:px-[0px] mt-[32px] md:mt-[48px] gap-[24px] pb-[100px] w-full">
+        <div className="w-full max-w-[800px] flex flex-col gap-[24px]">
+          {loading ? (
+            <p className="text-[#8e8e8e] text-xl font-normal">Loading article...</p>
+          ) : !article ? (
+            <p className="text-[#8e8e8e] text-xl font-normal">Article not found.</p>
+          ) : (
+            <>
+              <h1 className="text-[36px] md:text-[46px] leading-[1.2] text-[#202124] dark:text-white transition-colors font-medium font-sans">
+                {article.title}
+              </h1>
+              
+              {article.author?.name && (
+                <div className="flex flex-col mt-2 mb-2">
+                  <span className="text-[#202124] dark:text-white text-lg font-medium">By {article.author.name}</span>
+                  {article.author.position && (
+                    <span className="text-[#5f6368] text-md">{article.author.position}</span>
+                  )}
+                </div>
+              )}
 
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed font-sans mt-6">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {article.content}
-              </ReactMarkdown>
-            </div>
-
-            {article.contacts && article.contacts.length > 0 && (
-              <div className="mt-16 pt-8 flex flex-col gap-4">
-                <h3 className="text-xl font-medium text-black dark:text-white">Contacts:</h3>
-                {article.contacts.map((contact, index) => (
-                  <div key={index} className="flex gap-2 text-lg text-black dark:text-white">
-                    <span>{contact.name}</span>
-                    {contact.email && (
-                      <a href={`mailto:${contact.email}`} className="text-[#ed1f27] hover:underline">
-                        {contact.email}
-                      </a>
-                    )}
-                  </div>
-                ))}
+              {/* The date and content */}
+              <div className="prose prose-lg dark:prose-invert max-w-none 
+                prose-p:text-[#3c4043] dark:prose-p:text-gray-300 prose-p:text-[19px] prose-p:leading-[1.7] prose-p:font-sans
+                prose-headings:text-[#202124] dark:prose-headings:text-white prose-headings:font-medium
+                prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                prose-li:text-[#3c4043] dark:prose-li:text-gray-300 prose-li:text-[19px]
+                mt-4">
+                {/* Alphabet style dateline prepended to content, or just standard date above */}
+                <p className="text-[#5f6368] dark:text-gray-400 font-medium mb-6 uppercase tracking-wider text-sm">
+                  {article.date}
+                </p>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {article.content}
+                </ReactMarkdown>
               </div>
-            )}
-          </>
-        )}
+
+              {article.contacts && article.contacts.length > 0 && (
+                <div className="mt-12 pt-8 flex flex-col gap-4 border-t border-gray-200 dark:border-gray-800">
+                  <h3 className="text-[22px] font-medium text-[#202124] dark:text-white">Contact</h3>
+                  {article.contacts.map((contact, index) => (
+                    <div key={index} className="flex flex-col text-[17px] text-[#3c4043] dark:text-gray-300 font-sans">
+                      <span className="font-medium">{contact.name}</span>
+                      {contact.email && (
+                        <a href={`mailto:${contact.email}`} className="text-[#ed1f27] hover:underline font-medium">
+                          {contact.email}
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </main>
 
       <Footer />

@@ -502,54 +502,60 @@ export function Admin() {
 
         {view === "editor" && isPreview && (
           /* Preview Mode */
-          <div className="flex flex-col gap-[32px] w-full border border-dashed border-[#8e8e8e] p-8 rounded-xl relative">
+          <div className="flex flex-col gap-[32px] w-full items-center">
             
-            {/* Mobile preview toggle inside preview */}
-            <button
-              onClick={() => setIsPreview(false)}
-              className="absolute top-4 right-4 px-4 py-1 text-sm border border-[#8e8e8e] rounded-full text-[#8e8e8e] hover:text-black dark:hover:text-white transition-colors md:hidden"
-            >
-              Edit Mode
-            </button>
+            <div className="w-full max-w-[800px] border border-dashed border-[#8e8e8e]/50 p-8 rounded-xl relative bg-white dark:bg-[#141414]">
+              {/* Mobile preview toggle inside preview */}
+              <button
+                onClick={() => setIsPreview(false)}
+                className="absolute top-4 right-4 px-4 py-1 text-sm border border-[#8e8e8e] rounded-full text-[#8e8e8e] hover:text-black dark:hover:text-white transition-colors md:hidden"
+              >
+                Edit Mode
+              </button>
 
-            <div className="text-[#8e8e8e] mb-4 flex justify-between pb-4">
-              <span className="hidden md:inline">Live Preview</span>
-              <span className="md:hidden"></span>
-              <span>{date || "Date Placeholder"}</span>
-            </div>
-            
-            <h1 className="text-[32px] md:text-[50px] leading-tight text-black dark:text-white transition-colors font-normal">
-              {title || "Article Title Placeholder"}
-            </h1>
-
-            {(authorName || authorPosition) && (
-              <div className="flex flex-col mt-4 mb-2">
-                {authorName && <span className="text-black dark:text-white text-lg font-medium">By {authorName}</span>}
-                {authorPosition && <span className="text-[#8e8e8e] text-md">{authorPosition}</span>}
+              <div className="text-[#8e8e8e] mb-12 flex justify-between pb-4 border-b border-[#8e8e8e]/20 text-sm">
+                <span className="hidden md:inline">Live Preview (Alphabet Style)</span>
+                <span className="md:hidden"></span>
+                <span>Previewing as public article</span>
               </div>
-            )}
+              
+              <div className="flex flex-col gap-[24px]">
+                <h1 className="text-[36px] md:text-[46px] leading-[1.2] text-[#202124] dark:text-white transition-colors font-medium font-sans">
+                  {title || "Article Title Placeholder"}
+                </h1>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline text-black dark:text-white text-[16px] md:text-[20px] leading-relaxed mt-6">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {content || "*Article content will appear here...*"}
-              </ReactMarkdown>
-            </div>
+                {/* The date and content */}
+                <div className="prose prose-lg dark:prose-invert max-w-none 
+                  prose-p:text-[#3c4043] dark:prose-p:text-gray-300 prose-p:text-[19px] prose-p:leading-[1.7] prose-p:font-sans
+                  prose-headings:text-[#202124] dark:prose-headings:text-white prose-headings:font-medium
+                  prose-a:text-[#ed1f27] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                  prose-li:text-[#3c4043] dark:prose-li:text-gray-300 prose-li:text-[19px]
+                  mt-4">
+                  <p className="text-[#5f6368] dark:text-gray-400 font-medium mb-6 uppercase tracking-wider text-sm">
+                    {date || "Date Placeholder"}
+                  </p>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {content || "*Article content will appear here...*"}
+                  </ReactMarkdown>
+                </div>
 
-            {contacts.some((c) => c.name || c.email) && (
-              <div className="mt-16 pt-8 flex flex-col gap-4">
-                <h3 className="text-xl font-medium text-black dark:text-white">Contacts:</h3>
-                {contacts.map((contact, index) => (
-                  <div key={index} className="flex gap-2 text-lg text-black dark:text-white">
-                    <span>{contact.name}</span>
-                    {contact.email && (
-                      <a href={`mailto:${contact.email}`} className="text-[#ed1f27] hover:underline">
-                        {contact.email}
-                      </a>
-                    )}
+                {contacts.some((c) => c.name || c.email) && (
+                  <div className="mt-12 pt-8 flex flex-col gap-4 border-t border-gray-200 dark:border-gray-800">
+                    <h3 className="text-[22px] font-medium text-[#202124] dark:text-white">Contact</h3>
+                    {contacts.map((contact, index) => (
+                      <div key={index} className="flex flex-col text-[17px] text-[#3c4043] dark:text-gray-300 font-sans">
+                        <span className="font-medium">{contact.name || "Name"}</span>
+                        {contact.email && (
+                          <a href={`mailto:${contact.email}`} className="text-[#ed1f27] hover:underline font-medium">
+                            {contact.email}
+                          </a>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
-            )}
+            </div>
           </div>
         )}
 
