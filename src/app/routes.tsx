@@ -8,6 +8,7 @@ import { Investors } from "./pages/Investors";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 import { Contact } from "./pages/Contact";
+import { About } from "./pages/About";
 
 const isAdminSubdomain = window.location.hostname === "admin.hevarto.com";
 
@@ -33,6 +34,7 @@ const getRoutes = () => {
         { index: true, Component: Home },
         { path: "news", Component: NewsList },
         { path: "news/:id", Component: Article },
+        { path: "about", Component: About },
         { path: "investors", Component: Investors },
         { path: "privacy", Component: Privacy },
         { path: "terms", Component: Terms },
