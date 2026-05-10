@@ -12,7 +12,7 @@ export function About() {
 
       {/* Main content */}
       <main className="flex-1 flex flex-col px-[48px] md:px-[86px] mt-[48px] md:mt-[64px] gap-[32px] pb-[100px] max-w-[1400px]">
-        <div className="max-w-[800px] flex flex-col gap-6 text-[#8e8e8e] dark:text-[#a0a0a0] text-[20px] md:text-[24px] font-normal font-sans leading-[1.6]">
+        <div className="w-full flex flex-col gap-6 text-[#8e8e8e] dark:text-[#a0a0a0] text-[20px] md:text-[24px] font-normal font-sans leading-[1.6]">
           <p>
             Hevarto started as a technology company. We built products for other people — helped them move faster, think through hard problems, get things off the ground. It was good work, and it put us close to a lot of different industries, a lot of different users, and a lot of problems worth solving.
           </p>
