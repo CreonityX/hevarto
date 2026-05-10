@@ -53,14 +53,14 @@ export function Article() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-transparent">
       {/* Header */}
-      <header className="flex justify-between items-center pt-[48px] md:pt-[64px] px-[48px] md:px-[86px]">
-        <h1 className="text-[#8e8e8e] text-[20px] md:text-[24px] font-medium font-sans flex items-center gap-2 uppercase tracking-wide">
+      <header className="flex justify-between items-center pt-[64px] md:pt-[80px] px-[48px] md:px-[86px]">
+        <h1 className="text-[#8e8e8e] text-[40px] md:text-[50px] leading-none font-normal font-sans">
           News
         </h1>
       </header>
 
       {/* Article Content */}
-      <main className="flex-1 flex flex-col items-center px-[24px] md:px-[0px] mt-[32px] md:mt-[48px] gap-[24px] pb-[100px] w-full">
+      <main className="flex-1 flex flex-col items-center px-[48px] md:px-[86px] mt-[24px] md:mt-[32px] gap-[24px] pb-[100px] w-full max-w-[1400px] mx-auto">
         <div className="w-full max-w-[800px] flex flex-col gap-[24px]">
           {loading ? (
             <p className="text-[#8e8e8e] text-xl font-normal">Loading article...</p>
